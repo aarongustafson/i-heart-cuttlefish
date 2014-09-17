@@ -360,6 +360,10 @@ img {
         top: 50%; /* move down a little */
         margin-top: -1.2em;
     }
+    .banner--home #nav-jump {
+        top: 1em;
+        margin-top: 0;
+    }
     body:not(:target) #menu ul {
         top: 4em;
     }
@@ -428,6 +432,7 @@ img {
         padding-bottom: 3%;
     }
         .banner--home h1 {
+            font-size: 5vw; /* if supported, scale with the screen */
             position: static;
             margin-left: 0;
         }
