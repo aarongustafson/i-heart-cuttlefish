@@ -2,12 +2,21 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>I Heart Cuttlefish</title>
+		<title>Cuttlefish Video Gallery | The Fascinating Cuttlefish</title>
 
 		<link rel="stylesheet" href="css/main.css" media"screen">
+		
+		<!-- Web Fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic|Oxygen:700" rel="stylesheet" lazyload>
+		<link rel="stylesheet" href="css/fonts.css" media="screen" lazyload>
 
 	</head>
 	<body>
+		<header role="banner" class="banner" id="banner">
+			<h1><a href="index.html">The Fascinating Cuttlefish</a></h1>
+			<a id="nav-jump" href="#menu"><b class="hidden">Jump to the</b> Menu</a>
+		</header>
+
 		<main>
 			
 			<h1>Cuttlefish Video Gallery</h1>
@@ -15,7 +24,7 @@
 			
 			<div class="gallery">
 				
-				<figure class="gallery__item gallery__item--video">
+				<figure class="figure gallery__item gallery__item--video">
 					<div  class="video video--4x3">
 						<video class="video__content" poster="images/posters/laying-eggs.jpg" controls>
 							<source src="http://upload.wikimedia.org/wikipedia/commons/transcoded/e/ee/Cuttlefish.ogv/Cuttlefish.ogv.480p.webm">
@@ -30,33 +39,33 @@
 							</div>
 						</video>
 					</div>
-					<figcaption>
-						<p class="gallery__item__caption">Cuttlefish laying eggs somewhere around Komodo Island (Indonesia)</p>
-						<p class="gallery__item__source"><cite>Video <abbr title="licensed under Creative Commons by">CC</abbr> <a href="https://www.flickr.com/photos/silkebaron/3219305555/">Silke Baron</a></cite></p>
+					<figcaption class="figure__caption">
+						<p>Cuttlefish laying eggs somewhere around Komodo Island (Indonesia)</p>
+						<p class="figure__source"><cite><a href="https://www.flickr.com/photos/silkebaron/3219305555/">Silke Baron</a>, <abbr title="licensed under Creative Commons by">CC</abbr></cite></p>
 					</figcaption>
 				</figure>
 				
-				<figure class="gallery__item gallery__item--iframe">
+				<figure class="figure gallery__item gallery__item--iframe">
 					<div  class="video video--4x3">
 						<iframe class="video__content" src="http://www.youtube.com/embed/tHnm4I4RBMo?rel=0" frameborder="0" allowfullscreen></iframe>
 					</div>
-					<figcaption>
-						<p class="gallery__item__caption"><i class="taxonomy binomial">Metasepia Pfefferi</i> (Flamboyant Cuttlefish) in Kapalai Island sabah by <a href="http://malaysianunderwater.com">Underwater Studios</a>.</p>
-						<p class="gallery__item__source"><a href="https://www.youtube.com/watch?v=sFYX9D2RQUM">View on YouTube</a></p>
+					<figcaption class="figure__caption">
+						<p><i class="taxonomy binomial">Metasepia Pfefferi</i> (Flamboyant Cuttlefish) in Kapalai Island sabah by <a href="http://malaysianunderwater.com">Underwater Studios</a>.</p>
+						<p class="figure__source"><a title="View on YouTube" href="https://www.youtube.com/watch?v=sFYX9D2RQUM">YouTube</a></p>
 					</figcaption>
 				</figure>
 				
-				<figure class="gallery__item gallery__item--iframe">
+				<figure class="figure gallery__item gallery__item--iframe">
 					<div  class="video video--4x3">
 						<iframe class="video__content" src="http://www.youtube.com/embed/sFYX9D2RQUM?rel=0" frameborder="0" allowfullscreen></iframe>
 					</div>
-					<figcaption>
-						<p class="gallery__item__caption">A cuttlefish demonstrating its shape-shifting capability.</p>
-						<p class="gallery__item__source"><a href="https://www.youtube.com/watch?v=sFYX9D2RQUM">View on YouTube</a></p>
+					<figcaption class="figure__caption">
+						<p>A cuttlefish demonstrating its shape-shifting capability.</p>
+						<p class="figure__source"><a title="View on YouTube" href="https://www.youtube.com/watch?v=sFYX9D2RQUM">YouTube</a></p>
 					</figcaption>
 				</figure>
 				
-				<figure class="gallery__item gallery__item--video">
+				<figure class="figure gallery__item gallery__item--video">
 					<div class="video video--16x9">
 						<video class="video__content" poster="images/posters/pupils.jpg" controls>
 							<source src="http://upload.wikimedia.org/wikipedia/commons/transcoded/0/08/Sepia_eyelid_shape.theora.ogv/Sepia_eyelid_shape.theora.ogv.480p.webm">
@@ -71,9 +80,9 @@
 							</div>
 						</video>
 					</div>
-					<figcaption>
-						<p class="gallery__item__caption">Pupil expansion in <i class="taxonomy binomial">Sepia officinalis</i> after the room lights go out.</p>
-						<p class="gallery__item__source"><cite>Video <abbr title="licensed under Creative Commons by">CC</abbr> <a href="http://en.wikipedia.org/wiki/File:Sepia_eyelid_shape.theora.ogv">Tliglesias</a></cite></p>
+					<figcaption class="figure__caption">
+						<p>Pupil expansion in <i class="taxonomy binomial">Sepia officinalis</i> after the room lights go out.</p>
+						<p class="figure__source"><cite><a href="http://en.wikipedia.org/wiki/File:Sepia_eyelid_shape.theora.ogv">Tliglesias</a>, <abbr title="licensed under Creative Commons">CC</abbr></cite></p>
 					</figcaption>
 				</figure>
 				
@@ -81,15 +90,16 @@
 			
 		</main>
 		
-		<nav>
-			<h1>Want more Cuttlefish? Look No Further:</h1>
-			<ul>
-				<li><a href="index.html">Introduction</a></li>
-				<li><a href="physiology.html">Physiology</a></li>
-				<li><a href="ecology.html">Ecology</a></li>
-				<li><a href="photos.html">Photo Gallery</a></li>
-				<li><a href="videos.html"><mark>Video Gallery</mark></a></li>
+		<nav id="menu" tabindex="0">
+			<h1 class="hidden">Want more Cuttlefish? Look No Further:</h1>
+			<ul tabindex="0">
+				<li><a href="index.html"><b class="hidden">An </b>Introduction<b class="hidden"> to Cuttlefish</b></a></li>
+				<li><a href="physiology.html"><b class="hidden">Learn More About the </b>Physiology<b class="hidden"> of the Cuttlefish</b></a></li>
+				<li><a href="ecology.html"><b class="hidden">Explore the </b>Ecology<b class="hidden"> of the Cuttlefish</b></a></li>
+				<li><a href="photos.html"><b class="hidden">View </b>Photos<b class="hidden"> of Different Cuttlefish</b></a></li>
+				<li><mark><a href="videos.html"><b class="hidden">Watch </b>Videos<b class="hidden"> of Cuttlefish in Action</b></a></mark></li>
 			</ul>
+			<a id="menu-close" href="#banner"><b class="hidden">Return to the content</b></a>
 		</nav>
 		
 		<footer>

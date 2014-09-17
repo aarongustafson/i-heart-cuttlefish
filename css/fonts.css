@@ -1,0 +1,12 @@
+/* Lilly
+ * http://www.fontsquirrel.com/fonts/Lilly */
+@font-face {
+    font-family: 'Lilly';
+    src: url('fonts/Lilly__-webfont.eot');
+    src: url('fonts/Lilly__-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Lilly__-webfont.woff') format('woff'),
+         url('fonts/Lilly__-webfont.ttf') format('truetype'),
+         url('fonts/Lilly__-webfont.svg#lillyregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

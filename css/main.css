@@ -12,20 +12,41 @@
  * 
  * ================================================================= */
 
+/* CSS Reset for HTML5 */
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block;}
+
+
 body {
-    font-size: 16px;
+    font: 100%/1.4 "Libre Baskerville", Georgia, "Times New Roman", Times, serif;
+    margin: 0;
+    padding: 0;
 }
 
 /* =================================================================
  * Defaults
  * ================================================================= */
+h1, h2, h3 {
+    font-family: Lilly, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.4; /* 1.4 * the font size */
+    margin: 0;
+}
+h1 {
+    font-size: 1.5em; /* 16 * 1.5 = 24 */
+    margin-bottom: .15em; /* 16 * .15 = 2.4 */
+}
+p, dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 1.25em; /* 16 * 1.2 = 20 */
+}
 a {
+    color: green;
     text-decoration: none;
     border-bottom: 1px dotted;
 }
     a:hover,
     a:focus,
     a:active {
+        color: green;
         border-bottom-style: solid;
     }
 
@@ -33,53 +54,270 @@ cite {
     font-style: normal;
 }
 
+
+/* =================================================================
+ * Helpers
+ * ================================================================= */
+.hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6 and IE7 use the wrong syntax */
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+
+/* =================================================================
+ * Layout
+ * ================================================================= */
+hr {
+    display: none;
+}
+header,
+main,
+nav,
+footer {
+    margin: 0 auto;
+    max-width: 960px;
+}
+header,
+main,
+nav {
+    margin-bottom: 1em;
+}
+main,
+footer {
+    box-sizing: border-box;
+    padding: 0 1em;
+}
+
+
+/* =================================================================
+ * Banner
+ * ================================================================= */
+.banner {
+    background: #000;
+    color: #fff;
+    margin: 0 0 2em;
+    padding: 2% 1em;
+    position: relative;
+}
+    .banner h1 {
+        font-size: 1em;
+        line-height: 2.5;
+        margin: 0;
+    }
+    .banner a {
+        border-bottom: 0;
+        color: #fff;
+        text-decoration: none;
+    }
+.banner--home {
+    text-align: center;
+    padding: 7% 0 5%;
+}
+    .banner--home h1 {
+        font-size: 5vw; /* if supported, scale with the screen */
+        padding-top: 2%;
+    }
+    .banner--home picture,
+    .banner--home img {
+        display: inline;
+        width: 50%;
+        max-width: 400px;
+        height: auto;
+    }
+
+
+/* =================================================================
+ * Navigation
+ * ================================================================= */
+#nav-jump {
+    border: 1px solid;
+    border-radius: 3px;
+    background: #000;
+    color: #fff;
+    font: bold .875em Oxygen, Helvetica, Arial, sans-serif;
+    padding: .5em;
+    text-transform: uppercase;
+    /* move to the upper right corner */
+    position: absolute;
+    top: .75em;
+    right: 1em;
+    z-index: 1000;
+}
+nav ul {
+    border-top: 1px solid;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav a {
+    border-bottom: 1px solid;
+    display: block;
+    font: bold 1em Oxygen, Helvetica, Arial, sans-serif;
+    line-height: 2;
+    padding: 0 1em;
+}
+/* body:not(:target) is a nifty CSS filter to allow show/hide with CSS 
+ * in browsers that support :not() and :target
+ * See: http://www.creativebloq.com/css3/build-smart-mobile-navigation-without-hacks-6122800
+ */
+body:not(:target) #menu {
+    max-width: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    outline: 0;
+}
+    body:not(:target) #menu ul {
+        border: 1px solid transparent;
+        border-bottom-width: 0;
+        max-width: 12.5em; /* 16 * 12.5 = 200 */
+        position: absolute;
+        right: 2%;
+        top: 3em;
+        z-index: 1002;
+    }
+    body:not(:target) #menu ul a {
+        background: #fff;
+        background-color: rgba(255, 255, 255, .95);
+        color: #000;
+        border-bottom-width: 0;
+        overflow: hidden;
+        height: 0;
+        /* Hardware Accelerate for better animation */
+           -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+        -webkit-transform: translate3d(0,0,0);
+                transform: translate3d(0,0,0);
+           -moz-transition: height .15s;
+            -ms-transition: height .15s;
+        -webkit-transition: height .15s;
+                transition: height .15s;
+    }
+    body:not(:target) #menu:target {
+        /* Overlay everything */
+        bottom: 0;
+        height: 100%;
+    }
+    body:not(:target) #menu:target ul {
+        border-color: #000;
+    }
+    body:not(:target) #menu:target ul a {
+        border-bottom-width: 1px;
+        height: 2em;
+        position: relative;
+        z-index: 1;
+           -moz-transition: height .25s;
+            -ms-transition: height .25s;
+        -webkit-transition: height .25s;
+                transition: height .25s;
+    }
+    body:not(:target) #menu-close {
+        border: 0;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1001;
+    }
+    
+
+ 
+/* =================================================================
+ * Footer
+ * ================================================================= */
+footer {
+    border-top: 1px solid #ccc;
+    padding-top: 1em;
+    font-size: 0.875em; /* 16 * .875 = 14 */
+    font-style: italic;
+}
+
+ 
 /* =================================================================
  * Galleries
  * ================================================================= */
 .gallery {}
-    .gallery__item {
-        
-        /* contain the source */
-        position: relative;
-    }
-        .gallery__item__caption {
-            font-size: 14px;
-            font-style: italic;
-            margin: 1em 0 0;
-        }
-        .gallery__item__source {
-            background: black;
-            background: rgba( 0, 0, 0, .8 ); /* 80% black */
-            color: white;
+    .gallery__item {}
 
-            font-family: sans-serif;
-            font-size: 11px;
-            
-            padding: .5em .75em;
-            
-            /* position over the image */
-            position: absolute;
-            top: 0;
-            right: 0;
+
+/* =Figures */
+figure {
+    margin: 0 0 1.25em; /* 16 * 1.2 = 20 */
+}
+.figure {
+    position: relative; /* contain the source */
+}
+    .figure__caption {
+        font-size: 0.875em; /* 16 * .875 = 14 */
+        font-style: italic;
+        margin: 1em 0 0;
+    }
+        .figure__caption em,
+        .figure__caption i {
+            font-style: normal;
         }
-        .gallery__item__source a {
+    .figure__source {
+        background: black;
+        background: rgba( 0, 0, 0, .8 ); /* 80% black */
+        color: white;
+
+        font-family: sans-serif;
+        font-size: 0.7857em; /* 14 * .7857 = 11 */
+
+        padding: .5em .75em;
+
+        /* position over the image */
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+        .figure__source a {
             color: white;
             color: inherit;
             text-decoration: none;
         }
-
-/* =Figures */
-figure {
+    
+.figure--inline {
     display: block;
-    margin: 1em 0;
-    padding: 0;
+    margin: 1em auto;
+    max-width: 310px;
 }
-figcaption {
-    display: block;
-}
-figcaption p {
-    margin: 0;
-}
+    .figure--inline img,
+    .figure--inline picture,
+    .figure--inline .video {
+        margin-bottom: 1em;
+    }
+    .figure--inline::before,
+    .figure--inline::after {
+        content: " ";
+        display: block;
+        height: 0;
+        margin: 1em auto 0;
+        width: 50%;
+        border-top: 1px solid #ccc;
+    }
+    .figure--inline::before {
+        margin: 0 auto 1em;
+    }
+    .figure--inline .figure__source {
+        margin-top: 1.4545em; /* make room for the space 11 * 1.4545 = 16 */
+        top: 1px; /* the border */
+    }
+    h1 + .figure--inline::before {
+        display: none;
+    }
+    h1 + .figure--inline .figure__source {
+        margin-top: 0; /* remove the space */
+        top: 0; /* and the border compensation */
+    }
 
 /* =Responsive Images */
 picture,
@@ -109,4 +347,130 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+
+/* >= 648px */
+@media only screen and (min-width:40.5em) {
+    
+    /* =================================================================
+     * Navigation
+     * ================================================================= */
+    #nav-jump {
+        top: 50%; /* move down a little */
+        margin-top: -1.2em;
+    }
+    body:not(:target) #menu ul {
+        top: 4em;
+    }
+
+    /* =================================================================
+     * Figures
+     * ================================================================= */
+    .figure--inline {
+        float: right;
+        margin-left: 2%;
+    }
+        .figure--inline {
+            margin-top: 0;
+        }
+        h1 + .figure--inline::before {
+            display: none;
+        }
+     
+}
+
+
+/* >= 648px & < 960px */
+@media only screen and (min-width:40.5em) and (max-width:59.99em) {
+
+    /* =================================================================
+     * Galleries
+     * ================================================================= */
+    .gallery {
+        overflow: hidden;
+    }
+        .gallery__item {
+            float: left;
+            width: 48%;
+            margin-right: 2%;
+        }
+            .gallery__item:nth-child(odd) {
+                clear: both;
+            }
+            .gallery__item:nth-child(even) {
+                float: right;
+                margin-right: 0;
+            }
+    
+}
+
+
+/* >= 960px */
+@media only screen and (min-width:60em) {
+
+    /* =================================================================
+     * Banner
+     * ================================================================= */
+    .banner {
+        min-height: 2.5em;
+        max-width: 100%;
+    }
+        .banner h1 {
+            font-size: 2em;
+            line-height: 1.4;
+            padding: 0 .5em;
+            position: absolute;
+            left: 50%;
+            margin-left: -15em;
+        }
+    .banner--home {
+        padding-bottom: 3%;
+    }
+        .banner--home h1 {
+            position: static;
+            margin-left: 0;
+        }
+     
+    /* =================================================================
+     * Navigation
+     * ================================================================= */
+    #nav-jump {
+        /* Lock to the right edge of the page */
+        right: 50%; /* move to the middle */
+        margin-right: -33.286em; /* move back to the right by half the page width based on 14px */
+        
+    }
+    body:not(:target) #menu ul {
+        /* Lock to the right edge of the page */
+        right: 50%; /* move to the middle */
+        margin-right: -29em; /* tucked in a little from the right */
+    }
+    
+    /* =================================================================
+     * Figures
+     * ================================================================= */
+    .figure--inline {
+        width: 32%;
+    }
+     
+    /* =================================================================
+     * Galleries
+     * ================================================================= */
+     .gallery {
+         overflow: hidden;
+     }
+        .gallery__item {
+            float: left;
+            width: 32%;
+            margin-right: 2%;
+        }
+            .gallery__item:nth-child(3n+1) {
+                clear: both;
+            }
+            .gallery__item:nth-child(3n+3) {
+                float: right;
+                margin-right: 0;
+            }
+    
 }
