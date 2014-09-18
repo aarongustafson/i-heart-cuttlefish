@@ -15,15 +15,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<meta name="MobileOptimized" content="width">
 		<meta name="HandheldFriendly" content="true">
+
+		<!-- Polyfill for Picture element -->
+		<script>document.createElement( "picture" );</script>
+		<script src="js/picturefill.min.js" async></script>
 	</head>
 	<body class="home">
 
 		<header role="banner" class="banner banner--home" id="banner" tabindex="-1">
-			<picture>
-				<source src="images/cuttlefish.jpg" media="(min-width:600px)">
-				<source src="images/cuttlefish-sm.jpg">
-				<img src="images/cuttlefish-sm.jpg" alt="">
-			</picture>
+			<img src="images/cuttlefish-sm.jpg"
+			 	 srcset="images/cuttlefish.jpg 800w, images/cuttlefish-sm.jpg 400w"
+				 sizes="400px"
+				 alt="">
 			<h1>The Fascinating Cuttlefish</h1>
 			<a id="nav-jump" href="#menu"><b class="hidden">Jump to the</b> Menu</a>
 		</header>
@@ -52,10 +55,6 @@
 		<footer>
 			<p id="copyright">The text content of this site was lovingly borrowed from <a href="//en.wikipedia.org/wiki/Cuttlefish">the Wikipedia article on Cuttlefish</a> on <time>15 August 2014</time> under the <a href="//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a>. Licensing terms of content from other sources (photos, etc.) is noted along with each respective resource.</p>
 		</footer>
-		
-		<!-- Polyfill for Picture element -->
-		<script>document.createElement( "picture" );</script>
-		<script src="js/picturefill.min.js" async></script>
 		
 	</body>
 </html>

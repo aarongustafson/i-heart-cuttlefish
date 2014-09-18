@@ -153,7 +153,6 @@ footer {
         font-size: 5vw; /* if supported, scale with the screen */
         padding-top: 2%;
     }
-    .banner--home picture,
     .banner--home img {
         display: inline;
         width: 50%;
@@ -509,6 +508,9 @@ figure {
     }
         .home #menu ul {
             width: auto;
+        }
+        .home #menu li {
+            display: block;
         }
         .home #menu a {
             border-radius: 5px;

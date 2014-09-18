@@ -14,6 +14,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<meta name="MobileOptimized" content="width">
 		<meta name="HandheldFriendly" content="true">
+
+		<!-- Polyfill for Picture element -->
+		<script>document.createElement( "picture" );</script>
+		<script src="js/picturefill.min.js" async></script>
 	</head>
 	<body>
 		<header role="banner" class="banner" id="banner" tabindex="-1">
