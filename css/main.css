@@ -160,74 +160,10 @@ nav a {
     line-height: 2;
     padding: 0 1em;
 }
-/* body:not(:target) is a nifty CSS filter to allow show/hide with CSS 
- * in browsers that support :not() and :target
- * See: http://www.creativebloq.com/css3/build-smart-mobile-navigation-without-hacks-6122800
- */
-body:not(:target) #menu {
-    max-width: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    outline: 0;
+nav mark a {
+    background: #000;
+    color: #fff;
 }
-    body:not(:target) #menu ul {
-        border: 1px solid transparent;
-        border-bottom-width: 0;
-        max-width: 12.5em; /* 16 * 12.5 = 200 */
-        position: absolute;
-        right: 2%;
-        top: 3em;
-        z-index: 1002;
-    }
-    body:not(:target) #menu ul a {
-        background: #fff;
-        background-color: rgba(255, 255, 255, .95);
-        color: #000;
-        border-bottom-width: 0;
-        overflow: hidden;
-        height: 0;
-        /* Hardware Accelerate for better animation */
-           -moz-transform: translate3d(0,0,0);
-            -ms-transform: translate3d(0,0,0);
-        -webkit-transform: translate3d(0,0,0);
-                transform: translate3d(0,0,0);
-           -moz-transition: height .15s;
-            -ms-transition: height .15s;
-        -webkit-transition: height .15s;
-                transition: height .15s;
-    }
-    body:not(:target) #menu:target {
-        /* Overlay everything */
-        bottom: 0;
-        height: 100%;
-    }
-    body:not(:target) #menu:target ul {
-        border-color: #000;
-    }
-    body:not(:target) #menu:target ul a {
-        border-bottom-width: 1px;
-        height: 2em;
-        position: relative;
-        z-index: 1;
-           -moz-transition: height .25s;
-            -ms-transition: height .25s;
-        -webkit-transition: height .25s;
-                transition: height .25s;
-    }
-    body:not(:target) #menu-close {
-        border: 0;
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 1001;
-    }
-    
 
  
 /* =================================================================
@@ -350,23 +286,138 @@ img {
 }
 
 
-/* >= 648px */
-@media only screen and (min-width:40.5em) {
+/* 320px—648px */
+@media only screen and (min-width:20em) and (max-width:40.5em) {
     
     /* =================================================================
      * Navigation
      * ================================================================= */
+    /* body:not(:target) is a nifty CSS filter to allow show/hide with CSS 
+     * in browsers that support :not() and :target
+     * See: http://www.creativebloq.com/css3/build-smart-mobile-navigation-without-hacks-6122800
+     */
+    body:not(:target) #menu {
+        max-width: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        outline: 0;
+    }
+        body:not(:target) #menu ul {
+            border: 1px solid transparent;
+            border-bottom-width: 0;
+            max-width: 12.5em; /* 16 * 12.5 = 200 */
+            position: absolute;
+            right: 2%;
+            top: 3em;
+            z-index: 1002;
+        }
+        body:not(:target) #menu ul a {
+            background: #fff;
+            background-color: rgba(255, 255, 255, .95);
+            color: #000;
+            border-bottom-width: 0;
+            overflow: hidden;
+            height: 0;
+            /* Hardware Accelerate for better animation */
+               -moz-transform: translate3d(0,0,0);
+                -ms-transform: translate3d(0,0,0);
+            -webkit-transform: translate3d(0,0,0);
+                    transform: translate3d(0,0,0);
+               -moz-transition: height .15s;
+                -ms-transition: height .15s;
+            -webkit-transition: height .15s;
+                    transition: height .15s;
+        }
+        body:not(:target) #menu:target {
+            /* Overlay everything */
+            bottom: 0;
+            height: 100%;
+        }
+        body:not(:target) #menu:target ul {
+            border-color: #000;
+        }
+        body:not(:target) #menu:target ul a {
+            border-bottom-width: 1px;
+            height: 2em;
+            position: relative;
+            z-index: 1;
+               -moz-transition: height .25s;
+                -ms-transition: height .25s;
+            -webkit-transition: height .25s;
+                    transition: height .25s;
+        }
+        body:not(:target) #menu:target mark a {
+            background: #000;
+            color: #fff;
+        }
+        body:not(:target) #menu-close {
+            border: 0;
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1001;
+        }
+     
+}
+ 
+/* >= 648px */
+@media only screen and (min-width:40.5em) {
+    
+    /* =================================================================
+     * Banner
+     * ================================================================= */
+    .banner {
+        padding: 1em;
+    }
+        .banner h1 {
+            font-size: 1.5em;
+            line-height: 1.5;
+            margin: 0;
+            padding-bottom: 1em;
+        }
+     
+    /* =================================================================
+     * Navigation
+     * ================================================================= */
     #nav-jump {
-        top: 50%; /* move down a little */
-        margin-top: -1.2em;
+        right: auto;
+        left:  -999em;
     }
-    .banner--home #nav-jump {
-        top: 1em;
-        margin-top: 0;
+        #nav-jump:focus {
+            right: 50%;
+            left:  auto;
+            margin-right: -33em;
+        }
+    #menu {
+        position: absolute;
+        top: 3.75em;
+        right: 0;
+        white-space: nowrap;
     }
-    body:not(:target) #menu ul {
-        top: 4em;
-    }
+        #menu ul {
+            border: 0;
+        }
+        #menu li,
+        #menu a {
+            border: 0;
+            display: inline-block;
+        }
+        #menu a {
+            color: #fff;
+            line-height: 2em;
+            padding: 0 1em;
+        }
+        #menu mark a {
+            background: #fff;
+            border-radius: 5px 5px 0 0;
+            color: #000;
+        }
 
     /* =================================================================
      * Figures
@@ -385,7 +436,7 @@ img {
 }
 
 
-/* >= 648px & < 960px */
+/* 648px–960px */
 @media only screen and (min-width:40.5em) and (max-width:59.99em) {
 
     /* =================================================================
@@ -417,7 +468,7 @@ img {
      * Banner
      * ================================================================= */
     .banner {
-        min-height: 2.5em;
+        min-height: 4em;
         max-width: 100%;
     }
         .banner h1 {
@@ -440,18 +491,39 @@ img {
     /* =================================================================
      * Navigation
      * ================================================================= */
-    #nav-jump {
-        /* Lock to the right edge of the page */
-        right: 50%; /* move to the middle */
-        margin-right: -33.286em; /* move back to the right by half the page width based on 14px */
-        
+    #menu {
+        top: 4em;
+        right: 50%;
+        margin-right: -30em;
+        padding-right: 1em;
     }
-    body:not(:target) #menu ul {
-        /* Lock to the right edge of the page */
-        right: 50%; /* move to the middle */
-        margin-right: -29em; /* tucked in a little from the right */
-    }
-    
+        .home #menu {
+            position: static;
+            text-align: center;
+            margin: 1em auto;
+            padding: 0;
+            white-space: normal;
+        }
+            .home #menu ul {
+                width: auto;
+            }
+            .home #menu a {
+                color: #000;
+            }
+            .home #menu mark a {
+                background: #000;
+                border-radius: 5px;
+                color: #fff;
+            }
+        .home #menu-close::before {
+            color: #000;
+            content: "^ Return to the top";
+            display: inline-block;
+            font-size: .75em;
+            margin-top: 1em;
+            text-transform:  uppercase;
+        }
+            
     /* =================================================================
      * Figures
      * ================================================================= */
