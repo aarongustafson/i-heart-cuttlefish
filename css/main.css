@@ -57,12 +57,13 @@ body {
  * Defaults
  * ================================================================= */
 h1, h2, h3 {
-    font-family: Lilly, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 1.4; /* 1.4 * the font size */
+    font-family: Satisfy, cursive;
+    font-weight: 400;
+    line-height: 1; /* 1.4 * the font size */
     margin: 0;
 }
 h1 {
-    font-size: 1.5em; /* 16 * 1.5 = 24 */
+    font-size: 3em; /* 16 * 3 = 48 */
     margin-bottom: .15em; /* 16 * .15 = 2.4 */
 }
 p, dl, ol, ul {
@@ -136,8 +137,8 @@ footer {
     outline: none;
 }
     .banner h1 {
-        font-size: 1em;
-        line-height: 2.5;
+        font-size: 2em;
+        line-height: 1;
         margin: 0;
     }
     .banner a {
@@ -150,7 +151,7 @@ footer {
     padding: 7% 0 5%;
 }
     .banner--home h1 {
-        font-size: 5vw; /* if supported, scale with the screen */
+        font-size: 8vw; /* if supported, scale with the screen */
         padding-top: 2%;
     }
     .banner--home img {
@@ -357,8 +358,8 @@ figure {
     }
         .banner h1 a {
             display: table-cell;
-            line-height: 1.4;
-            height: 2.5em;
+            line-height: 1;
+            height: 1em;
             vertical-align: middle;
         }
     .banner--home {
@@ -453,10 +454,8 @@ figure {
         padding: 1em;
     }
         .banner h1 {
-            font-size: 1.5em;
-            line-height: 1.5;
             margin: 0;
-            padding-bottom: 1em;
+            padding-bottom: .87em;
         }
      
     /* =================================================================
@@ -617,18 +616,18 @@ figure {
         max-width: 100%;
     }
         .banner h1 {
-            font-size: 2em;
+            font-size: 3em;
             line-height: 1.4;
             padding: 0 .5em;
             position: absolute;
             left: 50%;
-            margin-left: -15em;
+            margin-left: -10em;
         }
     .banner--home {
         padding-bottom: 3%;
     }
         .banner--home h1 {
-            font-size: 5vw; /* if supported, scale with the screen */
+            font-size: 8vw; /* if supported, scale with the screen */
             position: static;
             margin-left: 0;
         }
@@ -647,6 +646,9 @@ figure {
         margin-right: -30em;
         padding-right: 1em;
     }
+        #menu li {
+            margin-left: -4px;
+        }
             
     /* =================================================================
      * Figures
