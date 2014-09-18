@@ -341,6 +341,9 @@ figure {
         width: 50%;
         border-top: 1px solid #ccc;
     }
+    .gallery__item:last-child::after {
+        display: none;
+    }
 
 
 /* 320px—648px */
