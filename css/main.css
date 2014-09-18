@@ -191,7 +191,7 @@ nav ul {
     padding: 0;
 }
 nav a {
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #000;
     color: #000;
     display: block;
     font: bold 1em Oxygen, Helvetica, Arial, sans-serif;
