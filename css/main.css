@@ -348,6 +348,7 @@ img {
         outline: 0;
     }
         body:not(:target) #menu ul {
+            background: transparent;
             border: 1px solid transparent;
             border-bottom-width: 0;
             max-width: 12.5em; /* 16 * 12.5 = 200 */
@@ -376,6 +377,8 @@ img {
             height: 100%;
         }
         body:not(:target) #menu:target ul {
+            background: #fff;
+            background-color: rgba(255, 255, 255, .95);
             border-color: #000;
         }
         body:not(:target) #menu:target ul a {
