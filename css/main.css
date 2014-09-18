@@ -495,10 +495,10 @@ figure {
             background: #fff;
             color: #000;
         }
-        #menu a:hover,
-        #menu a:focus,
-        #menu mark a:hover,
-        #menu mark a:focus {
+        #menu ul a:hover,
+        #menu ul a:focus,
+        #menu ul mark a:hover,
+        #menu ul mark a:focus {
             background: #ccc;
             color: #000;
         }
@@ -523,10 +523,10 @@ figure {
             background: #000;
             color: #fff;
         }
-        .home #menu a:hover,
-        .home #menu a:focus,
-        .home #menu mark a:hover,
-        .home #menu mark a:focus {
+        .home #menu ul a:hover,
+        .home #menu ul a:focus,
+        .home #menu ul mark a:hover,
+        .home #menu ul mark a:focus {
             background: #ccc;
             color: #000;
         }
