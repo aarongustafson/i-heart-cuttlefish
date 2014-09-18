@@ -223,8 +223,14 @@ footer {
  * Galleries
  * ================================================================= */
 .gallery {}
-    .gallery__item {}
-
+    .gallery__item::after {
+        content: " ";
+        display: block;
+        height: 0;
+        margin: 1em auto 0;
+        width: 50%;
+        border-top: 1px solid #ccc;
+    }
 
 /* =Figures */
 figure {
@@ -331,6 +337,27 @@ img {
 /* 320px—648px */
 @media only screen and (min-width:20em) and (max-width:40.5em) {
     
+    /* =================================================================
+     * Banner
+     * ================================================================= */
+    .banner {
+        padding-right: 4.625em;
+    }
+        .banner h1 a {
+            display: table-cell;
+            line-height: 1.4;
+            height: 2.5em;
+            vertical-align: middle;
+        }
+    .banner--home {
+        padding-right: 0;
+    }
+        .banner--home h1 a {
+            display: block;
+            line-height: 2.5;
+            height: auto;
+        }
+     
     /* =================================================================
      * Navigation
      * ================================================================= */
@@ -479,6 +506,12 @@ img {
             display: none;
         }
      
+    /* =================================================================
+     * Galleries
+     * ================================================================= */
+    .gallery__item::after {
+        display: none;
+    }
 }
 
 
