@@ -102,6 +102,7 @@ footer {
     margin: 0 0 2em;
     padding: 2% 1em;
     position: relative;
+    outline: none;
 }
     .banner h1 {
         font-size: 1em;
@@ -147,7 +148,13 @@ footer {
     right: 1em;
     z-index: 1000;
 }
+nav {
+    outline: none;
+}
 nav ul {
+    background: #fff;
+    background-color: rgba(255, 255, 255, .95);
+    color: #000;
     border-top: 1px solid;
     list-style: none;
     margin: 0;
@@ -155,14 +162,23 @@ nav ul {
 }
 nav a {
     border-bottom: 1px solid;
+    color: #000;
     display: block;
     font: bold 1em Oxygen, Helvetica, Arial, sans-serif;
     line-height: 2;
     padding: 0 1em;
+    outline: none;
 }
 nav mark a {
     background: #000;
     color: #fff;
+}
+nav ul a:hover,
+nav ul a:focus,
+nav mark a:hover,
+nav mark a:focus {
+    background: #ccc;
+    color: #000;
 }
 
  
@@ -315,9 +331,6 @@ img {
             z-index: 1002;
         }
         body:not(:target) #menu ul a {
-            background: #fff;
-            background-color: rgba(255, 255, 255, .95);
-            color: #000;
             border-bottom-width: 0;
             overflow: hidden;
             height: 0;
@@ -348,10 +361,6 @@ img {
                 -ms-transition: height .25s;
             -webkit-transition: height .25s;
                     transition: height .25s;
-        }
-        body:not(:target) #menu:target mark a {
-            background: #000;
-            color: #fff;
         }
         body:not(:target) #menu-close {
             border: 0;
@@ -401,6 +410,7 @@ img {
         white-space: nowrap;
     }
         #menu ul {
+            background: transparent;
             border: 0;
         }
         #menu li,
@@ -409,13 +419,20 @@ img {
             display: inline-block;
         }
         #menu a {
+            border-radius: 5px 5px 0 0;
             color: #fff;
             line-height: 2em;
             padding: 0 1em;
         }
         #menu mark a {
             background: #fff;
-            border-radius: 5px 5px 0 0;
+            color: #000;
+        }
+        #menu a:hover,
+        #menu a:focus,
+        #menu mark a:hover,
+        #menu mark a:focus {
+            background: #ccc;
             color: #000;
         }
 
@@ -508,13 +525,21 @@ img {
                 width: auto;
             }
             .home #menu a {
+                border-radius: 5px;
                 color: #000;
             }
             .home #menu mark a {
                 background: #000;
-                border-radius: 5px;
                 color: #fff;
             }
+            .home #menu a:hover,
+            .home #menu a:focus,
+            .home #menu mark a:hover,
+            .home #menu mark a:focus {
+                background: #ccc;
+                color: #000;
+            }
+            
         .home #menu-close::before {
             color: #000;
             content: "^ Return to the top";
