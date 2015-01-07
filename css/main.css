@@ -501,6 +501,11 @@ figure {
             background: #ccc;
             color: #000;
         }
+        #menu ul a:active,
+        #menu ul mark a:active {
+            background: green;
+            color: #fff;
+        }
     .home #menu {
         position: static;
         text-align: center;
@@ -534,7 +539,8 @@ figure {
             position: static !important;
             width: 100%;
             height: auto;
-            clip: none;
+            clip: inherit;
+            overflow: visible;
         }
         .home #menu h1 {
             margin-bottom: .5em;
