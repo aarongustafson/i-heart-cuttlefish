@@ -66,6 +66,9 @@ h1 {
     font-size: 3em; /* 16 * 3 = 48 */
     margin-bottom: .15em; /* 16 * .15 = 2.4 */
 }
+section h1 {
+    font-size: 2em; /* 16 * 2 = 32 */
+}
 p, dl, ol, ul {
     margin-top: 0;
     margin-bottom: 1.25em; /* 16 * 1.2 = 20 */
@@ -569,10 +572,8 @@ figure {
     .figure--inline {
         float: right;
         margin-left: 2%;
+        margin-top: 0;
     }
-        .figure--inline {
-            margin-top: 0;
-        }
         h1 + .figure--inline::before {
             display: none;
         }
@@ -682,4 +683,94 @@ figure {
                 margin-right: 0;
             }
     
+}
+
+/* Print Styles */
+@media print {
+    
+    /* =================================================================
+     * Overall page setup
+     * ================================================================= */
+    @page { margin: 0.5in; }
+	* { background: transparent !important; }
+	
+	/* =================================================================
+     * Readable font size
+     * ================================================================= */
+    body {
+        font-size: 12pt;
+    }
+    h1 {
+        font-size: 36pt;
+    }
+    section h1 {
+        font-size: 24pt;
+    }
+    
+    /* =================================================================
+     * Links!
+     * ================================================================= */
+    a {
+        border: 0;
+    }
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 75%;
+        font-style: normal;
+        font-family: monospace;
+        white-space: prewrap;
+    }
+    a[href^="#"]::after {
+        content: "";
+    }
+    
+    /* =================================================================
+     * widows & orphans
+     * ================================================================= */
+    p { widows: 4; orphans: 4; }
+	h1, h2, h3, h4, h5, h6, dl, ul, ol { page-break-inside: avoid; }
+    
+    /* =================================================================
+     * Hide from print
+     * ================================================================= */
+    #banner img,
+    #nav-jump,
+    #menu {
+        display: none;
+    }
+    
+    /* =================================================================
+     * Header &  Footer
+     * ================================================================= */
+    #banner {
+        text-align: center;
+    }
+    #banner a::after {
+        content: "";
+    }
+    
+    /* =================================================================
+     * Figures
+     * ================================================================= */
+    .figure--inline {
+        float: right;
+        margin-left: 2%;
+        margin-top: 0;
+        max-width: 33%;
+        page-break-inside: avoid;
+    }
+        h1 + .figure--inline::before {
+            display: none;
+        }
+        .figure__source {
+            background: white !important;
+            color: black;
+        }
+        .figure__source a {
+            color: black;
+            border: 0;
+        }
+        .figure__source a::after {
+            content: "";
+        }
 }
