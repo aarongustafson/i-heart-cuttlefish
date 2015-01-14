@@ -77,11 +77,15 @@ a {
     color: green;
     text-decoration: none;
     border-bottom: 1px dotted;
+    -webkit-transition: background .5s, color .5s;
+       -moz-transition: background .5s, color .5s;
+        -ms-transition: background .5s, color .5s;
+            transition: background .5s, color .5s;
 }
     a:hover,
     a:focus,
     a:active {
-        color: green;
+        color: red;
         border-bottom-style: solid;
     }
 
@@ -202,6 +206,10 @@ nav a {
     line-height: 2;
     padding: 0 1em;
     outline: none;
+    -webkit-transition: background .4s, color 0s .1s;
+       -moz-transition: background .4s, color 0s .1s;
+        -ms-transition: background .4s, color 0s .1s;
+            transition: background .4s, color 0s .1s;
 }
 nav mark a {
     background: #000;
@@ -213,6 +221,10 @@ nav mark a:hover,
 nav mark a:focus {
     background: #ccc;
     color: #000;
+    -webkit-transition: background .4s;
+       -moz-transition: background .4s;
+        -ms-transition: background .4s;
+            transition: background .4s;
 }
 
  
@@ -564,6 +576,10 @@ figure {
         margin-top: 1em;
         text-transform:  uppercase;
     }
+        .home #menu-close:hover::before,
+        .home #menu-close:focus::before {
+            color: red;
+        }
     
 
     /* =================================================================
